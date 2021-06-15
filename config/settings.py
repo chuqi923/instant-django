@@ -75,10 +75,21 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dc4ucno4pij5is',
+        'USER': 'mncmvgbdetyuvo',
+        'PASSWORD': '6aa9caaf7edaf5b41f8013822a1da9c6c434d2d9848a7f5be44f93e1dc57d56e',
+        'HOST': 'ec2-3-214-136-47.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
@@ -184,8 +195,3 @@ LOGGING = {
         },
     }
 }
-
-import django_heroku
-
-if 'DYNO' in os.environ:
-    django_heroku.settings(locals())
