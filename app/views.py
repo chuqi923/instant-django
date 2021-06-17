@@ -57,7 +57,8 @@ class ItemFilterView(LoginRequiredMixin, FilterView):
         ソート順・デフォルトの絞り込みを指定
         """
         # デフォルトの並び順として、登録時間（降順）をセットする。
-        return Item.objects.all().order_by('-created_at')
+        # return Item.objects.all().order_by('-date')
+        return Item.objects.filter(created_by=self.request.user).order_by('-date', '-money', 'type')
 
     def get_context_data(self, *, object_list=None, **kwargs):
         """
