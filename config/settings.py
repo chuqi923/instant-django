@@ -28,11 +28,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'deploy')  # プロジェクト直下のdeployディレクトリを指定
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),  # プロジェクト直下のstaticディレクトリを指定
-)
-
 # Application definition
 
 INSTALLED_APPS = [
